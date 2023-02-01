@@ -1,1 +1,1 @@
-web:gunicorn smatwebsite.wsgi
+web: gunicorn smatwebsite.wsgi
