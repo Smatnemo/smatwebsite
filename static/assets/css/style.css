@@ -407,3 +407,12 @@ nav .fas{
     margin-top: -40px;
     display: block;
 }
+
+article {
+    counter-reset: heading;
+}
+
+article h2::before {
+    counter-increment: heading;
+    content: '0'counter(heading)': ';
+}
