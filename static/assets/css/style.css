@@ -408,11 +408,3 @@ nav .fas{
     display: block;
 }
 
-article {
-    counter-reset: heading;
-}
-
-article h2::before {
-    counter-increment: heading;
-    content: '0'counter(heading)': ';
-}
