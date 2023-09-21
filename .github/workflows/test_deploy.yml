@@ -43,7 +43,7 @@ jobs:
     environment:
       name: production
       url: https://www.smatwebsite.co.uk
-    if: github.ref == 'refs/heads/main';
+    if: github.ref == 'refs/heads/main'
     steps:
         - name: Checkout
           uses: actions/checkout@master
