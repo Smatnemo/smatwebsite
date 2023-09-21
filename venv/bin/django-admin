@@ -1,4 +1,4 @@
-#!/home/tertese/Public/smat_projects/smat_portfolio/smatwebsite/smatwebsite/venv/bin/python3
+#!/var/www/www.smatwebsite.co.uk/smatwebsite/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

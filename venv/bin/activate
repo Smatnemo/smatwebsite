@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/tertese/Public/smat_projects/smat_portfolio/smatwebsite/smatwebsite/venv"
+VIRTUAL_ENV="/var/www/www.smatwebsite.co.uk/smatwebsite/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
