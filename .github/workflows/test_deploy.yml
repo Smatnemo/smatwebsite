@@ -61,5 +61,6 @@ jobs:
              cd /var/www/www.smatwebsite.co.uk/smatwebsite
              git pull
              source venv/bin/activate
+             which pip
              python -m pip install -r requirements.txt
 
