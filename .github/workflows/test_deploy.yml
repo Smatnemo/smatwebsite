@@ -43,7 +43,7 @@ jobs:
     environment:
       name: production
       url: https://www.smatwebsite.co.uk
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main';
     steps:
         - name: Checkout
           uses: actions/checkout@master
@@ -60,8 +60,5 @@ jobs:
              sudo apt-get install sshpass
              sshpass -p ${{ secrets.PASSWORD }} ssh -tt ${{ secrets.USER_IP }}
              cd /var/www/www.smatwebsite.co.uk/smatwebsite
-             git pull
-             source venv/bin/activate
-             which pip
-             python -m pip install -r requirements.txt
+             
 
