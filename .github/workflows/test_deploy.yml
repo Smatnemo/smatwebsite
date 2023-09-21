@@ -1,0 +1,65 @@
+name: smatwebsite CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: [3.8, 3.9, '3.10']
+
+    environment:
+      name: production
+      url: https://www.smatwebsite.co.uk
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run Tests
+        run: |
+          python manage.py test
+
+  production:
+    runs-on: ubuntu-latest
+    needs: test
+    environment:
+      name: production
+      url: https://www.smatwebsite.co.uk
+    if: github.ref == 'refs/heads/main'
+    steps:
+        - name: Checkout
+          uses: actions/checkout@master
+        - name: Deploy
+          run: |
+            mkdir -p ~/.ssh/
+            echo "${{ secrets.SSH_PRIV_KEY }}" > ~/.ssh/id_rsa
+            echo " ${{ secrets.SSH_PUB_KEY }}" > ~/.ssh/id_rsa.pub
+            chmod 600 ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa.pub
+            ssh-keyscan -H ${{ secrets.IP }} >> ~/.ssh/known_hosts
+        - name: Update the repo on the server
+          run: |
+             ssh ${{ secrets.USER_IP }}
+             cd /var/www/www.smatwebsite.co.uk/smatwebsite
+             git pull
+             source venv/bin/activate
+             python -m pip install -r requirements.txt
+
