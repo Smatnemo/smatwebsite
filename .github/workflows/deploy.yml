@@ -13,10 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - uses: ruby/setup-python@v3
+    - uses: actions/setup-python@v3
       with:
         python-version: 2.5.3
     - uses: Smatnemo/smatwebsite@main
-      with:
-        target: staging
-        deploy_key: ${{ secrets.DEPLOY_ENC_KEY }}
