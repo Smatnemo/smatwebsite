@@ -1,0 +1,25 @@
+name: Deploy on server
+
+on:
+  workflow_run:
+      workflows: 
+            - Test 
+      branches: 
+            - main
+      types:
+        - completed
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.5.3
+        bundler-cache: true
+    - uses: miloserdow/capistrano-deploy@master
+      with:
+        target: staging
+        deploy_key: ${{ secrets.DEPLOY_ENC_KEY }}
