@@ -11,7 +11,7 @@ on:
       - master
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       max-parallel: 4
       matrix:
@@ -43,7 +43,6 @@ jobs:
     environment:
       name: production
       url: https://www.smatwebsite.co.uk
-    if: github.ref == 'refs/heads/main'
     steps:
         - name: Checkout
           uses: actions/checkout@master
