@@ -1,4 +1,3 @@
-
 name: Test
 
 on:
@@ -11,7 +10,7 @@ on:
       - main
       - master
 jobs:
-  production:
+  test:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
