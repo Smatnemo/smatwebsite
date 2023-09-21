@@ -55,9 +55,9 @@ jobs:
             chmod 600 ~/.ssh/id_rsa
             chmod 600 ~/.ssh/id_rsa.pub
             ssh-keyscan -H ${{ secrets.IP }} >> ~/.ssh/known_hosts
-        - name: Update the repo on the server
+        - name: Update the repo on the server 
           run: |
-             apt-get install sshpass
+             sudo apt-get install sshpass
              sshpass -p ${{ secrets.PASSWORD }} ssh -tt ${{ secrets.USER_IP }}
              cd /var/www/www.smatwebsite.co.uk/smatwebsite
              git pull
