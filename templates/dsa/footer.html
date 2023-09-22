@@ -26,6 +26,9 @@
         return html.replace(/^(.*)$/mg, "<span class=\"line\">$1</span>")
     });
     $(".python-comment").css('font-style', 'italic');
+    $("pre").text(function (index, html) {
+        return html.repace('def', '<span style="color: blue; ">def</span>')
+    });
 </script>
 </body>
 </html>
