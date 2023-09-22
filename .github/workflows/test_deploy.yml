@@ -44,9 +44,6 @@ jobs:
       name: production
       url: https://www.smatwebsite.co.uk
     steps:
-        - name: Checkout
-          uses: actions/checkout@master
-
         - name: Update the repo on the server 
           run: |
              sudo apt-get install sshpass
