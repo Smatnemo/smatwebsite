@@ -152,6 +152,22 @@ print(locate_card(**test['input']) == test['output'])
         Time to list out all our test cases. Append the first test case to the test_cases list.
     </p>
 
+    <p>Here is a list of the kind of test cases that you should think of. Your function be able to handle all of these.</p>
+    <ol>
+        <li>The target argument query is in the middle after the first card but before the last</li>
+        <li>query occurs as the first card</li>
+        <li>query occurs at the end of the list</li>
+        <li>There is only one card and it is the query</li>
+        <li>query is not in the list of cards</li>
+        <li>There are no cards. Empty list of cards</li>
+        <li>There are multiple cards and they are all query</li>
+        <li>The list of cards contain other cards and repeating query cards</li>
+    </ol>
+    <blockquote>
+        <b>Edge Cases:</b><span>Note how all the cases above try to deal with edge cases. Cases that could make your function
+        return errors if not properly handled or well thought out. 
+        Try to come up with more cases on your own.</span>
+    </blockquote>
     <!--Appending Test case 1 and 2-->
 <pre>
 <span class="python-comment"># normal test case where query occurs in the middle</span>
@@ -167,6 +183,7 @@ test_cases.append({
 
     <!--Appending Test case 3-->
 <pre>
+<span class="python-comment"># query occurs at the beginning of the list</span>
 test_cases.append({
     'input': {
         'cards': [4, 2, 1, -1],
@@ -178,6 +195,7 @@ test_cases.append({
 
     <!--Appending Test case 4-->
 <pre>
+<span class="python-comment"># query occurs at the end of the list</span>
 test_cases.append({
     'input': {
         'cards': [3, -1, -9, -127],
@@ -189,6 +207,7 @@ test_cases.append({
 
 <!--Appending Test case 5-->
 <pre>
+<span class="python-comment"># query is the only card in the list</span>
 test_cases.append({
     'input': {
         'cards': [6],
@@ -201,6 +220,7 @@ test_cases.append({
 
 <!--Appending Test case 6-->
 <pre>
+<span class="python-comment"># query is not in the list of cards</span>
 test_cases.append({
     'input': {
         'cards': [9, 7, 5, 2, -9],
@@ -212,6 +232,7 @@ test_cases.append({
 
 <!--Appending Test case 7-->
 <pre>
+<span class="python-comment"># The list of cards is empty</span>
 test_cases.append({
     'input': {
         'cards': [],
@@ -223,6 +244,7 @@ test_cases.append({
 
 <!--Appending Test case 8-->
 <pre>
+<span class="python-commit"># The list of cards contains repeating cards or numbers with query in the middle</span>
 test_cases.append({
     'input': {
         'cards': [8, 8, 6, 6, 6, 6, 6, 3, 2, 2, 2, 0, 0, 0],
@@ -234,6 +256,7 @@ test_cases.append({
 
 <!--Appending Test case 9-->
 <pre>
+<span class=""># The query is repeated in the list of cards</span>
 test_cases.append({
     'input': {
         'cards': [8, 8, 6, 6, 6, 6, 6, 6, 3, 2, 2, 2, 0, 0, 0],
@@ -247,8 +270,25 @@ test_cases.append({
 print(test_cases)
 </pre>
 
-    <p>The output should be a list of all the tests held in test_cases</p>
+    <p>The output should be a list of all the tests held in test_cases. Now we can think of a solution and test it using our nearly
+    exhaustive list of test cases. Check next step</p>
 
+</div>
+
+<div>
+    <h3>Step 3: Think of a correct solution for the problem. Write it or say it in plain English.</h3>
+    <p>
+        The first goal is to come up with any solution. It may not be the best solution but it should work. This is usually a <i>brute force
+        solution</i>.
+        It could help to try solving this problem using a pen and paper. Create a step by step approach before coding it.
+        Here are a couple of brute force solutions that you might be thinking of.
+        <blockquote>
+            <b>First Solution:</b> You could be thinking of starting from the first item with index 0 in the list. You take the item, compare it to your query
+            if it is a match, return the position as the solution. If not increment the index and compare the next item to the query. If it is a match return the index
+            otherwise increment the index and try again. Continue until you compare the last item in the list. If the list is exhausted return -1 to indicate that our query
+            was not found.
+        </blockquote>
+    </p>
     
 </div>
 
