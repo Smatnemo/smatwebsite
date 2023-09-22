@@ -45,12 +45,12 @@
 <div>
     <p>Let's use <i>The Method</i> to solve our problem</p>
     <h2>Solution</h2>
-    <h4>Step 1: Write out the problem in your own words. Make a note of the input and output type.</h4>
+    <h3>Step 1: Write out the problem in your own words. Make a note of the input and output type.</h3>
     <p>After reading the problem, you have to reword it. Write it out clearly explaining how you understand it. This will help 
     you to remember the details of the problem.</p>
     <div>An example would be:
         <div>
-            <h3>Problem:</h3>
+            <h4>Problem:</h4>
             <blockquote>I have a list of cards. These cards are arranged in decreasing order. I have been asked to pick one card from this list.
             I must look for a strategy that allows me to turn over as few cards as possible.</blockquote>
         </div>
@@ -61,7 +61,7 @@
                 have 8 cards in total corresponding to the number of items in our list.
             </p>
             <p>
-                <h3>Input:</h3>
+                <h4>Input:</h4>
                 <blockquote>
                     <span>
                         cards: An argument to be passed into our function sorted in decreasing order. Eg.[14, 13, 12, 11, 10, 8, 7, 5].
@@ -70,7 +70,7 @@
                 </blockquote>
             </p>
             <p>
-                <h3>Output:</h3>
+                <h4>Output:</h4>
                 <span>The output can correspond to the index of the query or target.</span>
                 <blockquote>
                     <span>
@@ -88,7 +88,41 @@
             def locate_card(cards, query):
                 pass
         </pre>
+        <ul>
+            <li>Think carefully before naming your functions</li>
+            <li>You could discuss the problem with your colleague in a workplace or your interviewer</li>
+            <li>Think carefully about the names of your arguments and variables</li>
+        </ul>
     </div>
+
+</div>
+<br />
+<div>
+    <h3>Step 2: Write out examples of the inputs and outputs. Think about edge cases.</h3>
+    <p>
+        It is wise to have test cases set up before you start writing your solution. It helpls you think of the different approaches
+        you could possibly take to solve the problem.
+    </p>
+    <pre>
+        cards = [14, 13, 12, 11, 10, 8, 7, 5]
+        query = 8
+        output = 6
+    </pre>
+    <p>
+        Our testing strategy is to compare the result of out function to the expected output which is the position. Our function returns result.
+        The result is compared with the expected output.
+    </p>
+    <pre>
+        result = locate_card(cards, query)
+        result == output
+    </pre>
+    <p>The current result of our function is going to be obviously None. The function doesn't return anything'
+    The test 'result == output' will be false. To verify, run: 
+    </p>
+    <pre>
+        print(result)
+    </pre>
+
 </div>
 
 
