@@ -27,8 +27,10 @@
     });
     $(".python-comment").css('font-style', 'italic');
     $("pre").html(function (index, html) {
-        html.replace(/return/, '<span style=\"color: blue;\">return</span>')
         return html.replace(/def/g, '<span style=\"color: blue;\">def</span>')
+    });
+    $("pre").html(function (index, html) {
+        return html.replace(/return/g, '<span style=\"color: blue;\">return</span>')
     });
 </script>
 </body>
