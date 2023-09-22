@@ -20,18 +20,22 @@
             color: #ecf0f1;
             line-height: 100%;
         }
-
-            pre .line::before {
-                content: counter(line-numbering);
-                counter-increment: line-numbering;
-                padding-right: 1em;
+        pre .line::before {
+            content: counter(line-numbering);
+            counter-increment: line-numbering;
+            padding-right: 1em;
                 /* space after numbers */
-                padding-left: 8px;
-                width: 1.5em;
-                text-align: right;
-                opacity: 0.5;
-                color: white;
-            }
+            padding-left: 8px;
+            width: 1.5em;
+            text-align: right;
+            opacity: 0.5;
+            color: white;
+        }
+        .wrapper {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body class="container-fluid">

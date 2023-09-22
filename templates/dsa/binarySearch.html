@@ -1,4 +1,5 @@
 {% include "dsa/header.html" %}
+<div class="wrapper">
 <div>
     <h1>Binary Search</h1>
 </div>
@@ -113,8 +114,8 @@ output = 6
         The result is compared with the expected output.
     </p>
 <pre>
-        result = locate_card(cards, query)
-        result == output
+result = locate_card(cards, query)
+result == output
 </pre>
     <p>
         The current result of our function is going to be obviously None. The function doesn't return anything'
@@ -248,6 +249,6 @@ print(test_cases)
 
 </div>
 
-
+</div>
 
 {% include "dsa/footer.html" %}
