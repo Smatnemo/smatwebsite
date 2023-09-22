@@ -244,7 +244,7 @@ test_cases.append({
 
 <!--Appending Test case 8-->
 <pre>
-<span class="python-commit"># The list of cards contains repeating cards or numbers with query in the middle</span>
+<span class="python-comment"># The list of cards contains repeating cards or numbers with query in the middle</span>
 test_cases.append({
     'input': {
         'cards': [8, 8, 6, 6, 6, 6, 6, 3, 2, 2, 2, 0, 0, 0],
@@ -256,7 +256,7 @@ test_cases.append({
 
 <!--Appending Test case 9-->
 <pre>
-<span class=""># The query is repeated in the list of cards</span>
+<span class="python-comment"># The query is repeated in the list of cards</span>
 test_cases.append({
     'input': {
         'cards': [8, 8, 6, 6, 6, 6, 6, 6, 3, 2, 2, 2, 0, 0, 0],
@@ -323,24 +323,24 @@ print(test_cases)
     </p>
 <pre>
 def locate_card(cards, query):
-    <span class="python-commit"># Create a variable to hold the position of the first item. Eg position = 0</span>
+    <span class="python-comment"># Create a variable to hold the position of the first item. Eg position = 0</span>
     position = 0
     
-    <span class="python-commit"># Create a loop for repeating steps 2 and 3</span>
+    <span class="python-comment"># Create a loop for repeating steps 2 and 3</span>
     while True:
-        <span class="python-commit"># Check if the number at position is the same as the query</span>
+        <span class="python-comment"># Check if the number at position is the same as the query</span>
         if cards[position] == query:
         
             <span class=""># Found answer, return and exit!</span>
             return position
         
-        <span class="python-commit"># Otherwise increase position by 1</span>
+        <span class="python-comment"># Otherwise increase position by 1</span>
         position += 1
 
-        <span class="python-commit"># Before repeating steps 2 and 3, check if we have reached the end of the list</span>
+        <span class="python-comment"># Before repeating steps 2 and 3, check if we have reached the end of the list</span>
         if position == len(card):
             
-            <span class="python-commit"># Return -1 if position value exceeds the last index</span>
+            <span class="python-comment"># Return -1 if position value exceeds the last index</span>
             return -1
 </pre>
             
