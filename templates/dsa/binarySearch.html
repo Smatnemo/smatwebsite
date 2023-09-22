@@ -5,7 +5,91 @@
 
 <div>
     <p>We will begin with a hands-on approach to learning Data Structures and Algorithm.</p>
-    <p>Problem 1: Traversing a list wih n items</p>
+    <p>Problem 1: Imagine you were asked to pick out a card with a specific number from a deck of cards arranged in decreasing order by turning over as few cards as possible. Now write a function to this.</p>
+    <p>If you are familiar with the concept of Binary Search then this is a simple problem. Well, it is. Let's get to it. </p>
+    <p>We'll write a function to help you solve this problem.</p>
 </div>
+
+<div>
+    <h3>The Importance of Data Structures and Algorithms</h3>
+    <p>You will quickly see why it is important to understand basic Data Structures and Algorithms from this problem. While it is true that you may never apply some of these data structures in your job as 
+    a Software Developer, it is inevitable that you will face them in interviews. Another important thing to note is that it helps you think. By repeatedly solving problems and applying these techniques, you 
+    will gain the ability to think through problems quickly.</p>
+    <p>Some key skills you develop when solving programming problems are:</p>
+    <ol>
+        <li>Ability to think systematically</li>
+        <li>Identify extreme or edge cases for your solution and know its limitations</li>
+        <li>Ability to communicate your ideas clearly</li>
+        <li>Convert those ideas into working code</li>
+    </ol>
+</div>
+
+<div>
+    <h2>
+        The Method
+    </h2>
+    <p>Here is a well defined strategy for solving problems:</p>
+    <ol>
+        <li>Write out the problem in your own words. Make a note of the input and output type</li>
+        <li>Write out examples of the inputs and outputs. Think about edge cases.</li>
+        <li>Think of a correct solution for the problem. Write it or say it in plain English.</li>
+        <li>Try to implement it in code and test it using your examples. Debug it if there are errors</li>
+        <li>Do a complexity analysis of the your algorithm and identify its inefficiencies.</li>
+        <li>Apply a better technique to overcome the inefficiencies</li>
+    </ol>
+
+    <p>The purpose of this course is to help you learn how to <i>Apply a better technique</i> from already tested and used
+    data structures and algorithms.</p>
+</div>
+
+<div>
+    <p>Let's use <i>The Method</i> to solve our problem</p>
+    <h2>Solution</h2>
+    <h4>Step 1: Write out the problem in your own words. Make a note of the input and output type.</h4>
+    <p>After reading the problem, you have to reword it. Write it out clearly explaining how you understand it. This will help 
+    you to remember the details of the problem.</p>
+    <div>An example would be:
+        <div>
+            <h3>Problem:</h3>
+            <blockquote>I have a list of cards. These cards are arranged in decreasing order. I have been asked to pick one card from this list.
+            I must look for a strategy that allows me to turn over as few cards as possible.</blockquote>
+        </div>
+        <div>
+            <p>
+                If you are familiar with python you will know that a sequence of cards can be represented by a list in python. A list is an indexed array.
+                Each card corresponds to an index of the array. An example of a deck of cards represented using an array is [14, 13, 12, 11, 10, 8, 7, 5]. We
+                have 8 cards in total corresponding to the number of items in our list.
+            </p>
+            <p>
+                <h3>Input:</h3>
+                <blockquote>
+                    <span>
+                        cards: An argument to be passed into our function sorted in decreasing order. Eg.[14, 13, 12, 11, 10, 8, 7, 5].
+                        query: An argument that specifies the number to be drawn from the cards - our target. Eg 8.
+                    </span>
+                </blockquote>
+            </p>
+            <p>
+                <h3>Output:</h3>
+                <span>The output can correspond to the index of the query or target.</span>
+                <blockquote>
+                    <span>
+                        position: This is the value to be returned by our function. Eg 6 for our target 8.
+                    </span>
+                </blockquote>
+            </p>
+
+        </div>
+    </div>
+    <div>
+        <span>Using the input and output formats defined, we create a signature function.</span>
+        
+        <pre>
+                def locate_card(cards, query):
+                    pass
+        </pre>
+    </div>
+</div>
+
 
 {% include "dsa/footer.html" %}
