@@ -20,36 +20,72 @@
         <li>
             <a href="{% url 'dsa' 'binarySearch' %}">Linear and Binary Search</a>
         </li>
-        <li>Complexity and Big O Notation</li>
-        <li>Linked Lisits using Python classes</li>
+        <li><a href="{% url 'dsa' 'complexity' %}">Complexity and Big O Notation</a></li>
+        <li><a href="{% url 'dsa' 'linkedLists' %}">Linked Lisits using Python classes</a></li>
     </ul>
 
     <h3>Lesson 2 - Binary Search Trees, Traversals and Recursion</h3>
     <ul>
-        <li>Binary trees, traversals, and recursion</li>
-        <li>Binary Search trees & Common operations</li>
-        <li>Balanced binary trees and optimizations</li>
+        <li><a href="{% url 'dsa' 'binaryTrees' %}">Binary trees, traversals, and recursion</a></li>
+        <li><a href="{% url 'dsa' 'binarySearchTrees' %}">Binary Search trees & Common operations</a></li>
+        <li><a href="{% url 'dsa' 'balancedBinaryTrees' %}">Balanced binary trees and optimizations</a></li>
     </ul>
 
     <h3>Lesson 3 - Sorting Algorithms and Divide & Conquer</h3>
     <ul>
-        <li>Bubble sort and Insertion Sort</li>
-        <li>Merge sort using Divide and Conquer</li>
-        <li>Quicksort and Average complexity</li>
+        <li>
+            <a href="{% url 'dsa' 'bubbleSort' %}">
+                Bubble sort and Insertion Sort
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'dsa' 'mergeSort' %}">
+                Merge sort using Divide and Conquer
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'dsa' 'quickSort' %}">
+                Quicksort and Average complexity
+            </a>
+        </li>
     </ul>
 
     <h3>Lesson 4 - Recursion and Dynamic Programming</h3>
     <ul>
-        <li>Recursion and Memoization</li>
-        <li>Subsequence and knapsack problems</li>
-        <li>Backtracking and pruning</li>
+        <li>
+            <a href="{% url 'dsa' 'recursionMemoization' %}">
+                Recursion and Memoization
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'dsa' 'subsequenceKnapsack' %}">
+                Subsequence and knapsack problems
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'dsa' 'backtrackingPruning' %}">
+                Backtracking and pruning
+            </a>
+        </li>
     </ul>
 
     <h3>Lesson 5 - Graph Algorithms(BFS, DFS and Shortest Paths)</h3>
     <ul>
-        <li>Graphs, trees, and adjacency lists</li>
-        <li>Breadth-first and depth-first search</li>
-        <li>Shortest paths and directed graphs</li>
+        <li>
+            <a href="{% url 'dsa' 'graphsTrees' %}">
+                Graphs, trees, and adjacency lists
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'dsa' 'breadthAndDepthFirst' %}">
+                Breadth-first and depth-first search
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'dsa' 'shortestDirectedPath' %}">
+                Shortest paths and directed graphs
+            </a>
+        </li>
     </ul>
 </div>
 {% include "dsa/footer.html" %}
