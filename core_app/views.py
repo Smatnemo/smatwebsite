@@ -24,7 +24,7 @@ def aug(request, day_id):
 def sep(request, day_id):
     return render(request, 'challenges/sep/' + str(day_id) + '.html')
 
-def dsa(request, topic):
+def dsa(request, topic='dsaindex'):
     return render(request, 'dsa/'+ topic + '.html')
 
     
