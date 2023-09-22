@@ -23,10 +23,9 @@
 </footer>
 <script>
     $("pre").html(function (index, html) {
-        $('comment').css('font-style', 'italic');
         return html.replace(/^(.*)$/mg, "<span class=\"line\">$1</span>")
     });
-
+    $('comment').css('font-style', 'italic');
 </script>
 </body>
 </html>
