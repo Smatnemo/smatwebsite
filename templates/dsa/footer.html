@@ -27,7 +27,7 @@
     });
     $(".python-comment").css('font-style', 'italic');
     $("pre").html(function (index, html) {
-        return html.repace('def', '<span style=\"color: blue;\">def</span>')
+        return html.replace(/def/, '<span style=\"color: blue;\">def</span>')
     });
 </script>
 </body>
