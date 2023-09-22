@@ -116,8 +116,9 @@ output = 6
         result = locate_card(cards, query)
         result == output
 </pre>
-    <p>The current result of our function is going to be obviously None. The function doesn't return anything'
-    The test 'result == output' will be false. To verify, run: 
+    <p>
+        The current result of our function is going to be obviously None. The function doesn't return anything'
+        The test 'result == output' will be false. To verify, run:
     </p>
 <pre>
 print(result)
@@ -147,8 +148,104 @@ locate_card(**test['input']) == test['output']
 print(locate_card(**test['input']) == test['output'])
 </pre>
     <p>
-
+        Time to list out all our test cases. Append the first test case to the test_cases list.
     </p>
+
+    <!--Appending Test case 1 and 2-->
+<pre>
+test_cases.append(test)
+test_cases.append({
+    'input': {
+        'cards': [13, 11, 10, 7, 4, 3, 1, 0],
+        'query': 1
+    },
+    'output': 6
+})
+</pre>
+
+    <!--Appending Test case 3-->
+<pre>
+test_cases.append({
+    'input': {
+        'cards': [4, 2, 1, -1],
+        'query': 4
+    },
+    'output': 0
+})
+</pre>
+
+    <!--Appending Test case 4-->
+<pre>
+test_cases.append({
+    'input': {
+        'cards': [3, -1, -9, -127],
+        'query': -127
+    },
+    'output': 3
+})
+</pre>
+
+<!--Appending Test case 5-->
+<pre>
+test_cases.append({
+    'input': {
+        'cards': [6],
+        'query': 6
+    },
+    'output': 0
+})
+</pre>
+
+
+<!--Appending Test case 6-->
+<pre>
+test_cases.append({
+    'input': {
+        'cards': [9, 7, 5, 2, -9],
+        'query': 4
+    },
+    'output': -1
+})
+</pre>
+
+<!--Appending Test case 7-->
+<pre>
+test_cases.append({
+    'input': {
+        'cards': [],
+        'query': 7
+    },
+    'output': -1
+})
+</pre>
+
+<!--Appending Test case 8-->
+<pre>
+test_cases.append({
+    'input': {
+        'cards': [8, 8, 6, 6, 6, 6, 6, 3, 2, 2, 2, 0, 0, 0],
+        'query': 3
+    },
+    'output': 7
+})
+</pre>
+
+<!--Appending Test case 9-->
+<pre>
+test_cases.append({
+    'input': {
+        'cards': [8, 8, 6, 6, 6, 6, 6, 6, 3, 2, 2, 2, 0, 0, 0],
+        'query': 6
+    },
+    'output': 2
+})
+</pre>
+
+<pre>
+print(test_cases)
+</pre>
+
+
 </div>
 
 
