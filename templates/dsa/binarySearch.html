@@ -122,8 +122,35 @@
     <pre>
         print(result)
     </pre>
+    <p>
+        We will have several test cases and it is inconvinient to test them one at a time. So, the test cases will be held in a list.
+    </p>
+    <pre>
+test_cases = []
+</pre>
+    <p>For convinience as well as efficiency, each test will be a dictionary and it will be added to a list called test_cases.</p>
+    <pre>
+        test = {
+                'input': {
+                    'cards': [14, 13, 12, 11, 10, 8, 7, 5],
+                    'query': 8,
+                },
+                'output': 6
+        }
+    </pre>
+    <p>The dictionary test is our first test case and can be tested as follows:</p>
+    <pre>
+        locate_card(**test['input']) == test['output']
+    </pre>
+    <p>For now, this will be false if you are running this in command line or use print.</p>
+    <pre>
+        print(locate_card(**test['input']) == test['output'])
+    </pre>
+    <p>
 
+    </p>
 </div>
+
 
 
 {% include "dsa/footer.html" %}
