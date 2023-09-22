@@ -288,6 +288,21 @@ print(test_cases)
             otherwise increment the index and try again. Continue until you compare the last item in the list. If the list is exhausted return -1 to indicate that our query
             was not found.
         </blockquote>
+        <blockquote>
+            <b>Second Solution:</b> You could start the comparison from the last item in the list instead. Create a variable position to hold the index of the last item. Compare
+            the card with the query and if it is a match return position as the result otherwise decrease position by 1 and try again. Repeat until the list is exhausted.
+            Once the list is exhausted return -1 to indicate that our query is not contained in the list.
+        </blockquote>
+    </p>
+    <p>
+        Both solutions are the same. This is the linear search algorithm. Our very first algorithm. Let's make it more readable and hopefully implement it.
+        <ol>
+            <li>Create a variable to hold the position of the first item. Eg position = 0</li>
+            <li>Check if the number at position is the same as the query</li>
+            <li>If it is the same as the query, position is the answer, return position</li>
+            <li>Otherwise increase position by 1 and repeat steps 2 and 3</li>
+            <li>Continue until the list is exhausted and return -1 if no match is found</li>
+        </ol>
     </p>
     
 </div>
