@@ -303,8 +303,48 @@ print(test_cases)
             <li>Otherwise increase position by 1 and repeat steps 2 and 3</li>
             <li>Continue until the list is exhausted and return -1 if no match is found</li>
         </ol>
+        <blockquote>
+            <b>Linear Search Algorithm:</b> is simply a list of statements as presented above. It involves searching through a list in a linear manner, one element after another.
+        </blockquote>
     </p>
+    <blockquote>
+        <b>Advice:</b> The trick is to try to express the algorithm in words or in writing for better understanding before attempting to code the solution. The clearer you are able to 
+        express yourself in words or writing the better you will be able to code the solution.
+    </blockquote>
     
+</div>
+
+<div>
+    <h3>Step 4: Try to implement it in code and test it using your examples. Debug it if there are errors</h3>
+    <p>
+        Time we have all been waiting for is here. Time to write some coding logic. We will use everything above here. 
+        Each step will be written as a comment.
+        First attempt:
+    </p>
+<pre>
+def locate_card(cards, query):
+    <span class="python-commit"># Create a variable to hold the position of the first item. Eg position = 0</span>
+    position = 0
+    
+    <span class="python-commit"># Create a loop for repeating steps 2 and 3</span>
+    while True:
+        <span class="python-commit"># Check if the number at position is the same as the query</span>
+        if cards[position] == query:
+        
+            <span class=""># Found answer, return and exit!</span>
+            return position
+        
+        <span class="python-commit"># Otherwise increase position by 1</span>
+        position += 1
+
+        <span class="python-commit"># Before repeating steps 2 and 3, check if we have reached the end of the list</span>
+        if position == len(card):
+            
+            <span class="python-commit"># Return -1 if position value exceeds the last index</span>
+            return -1
+</pre>
+            
+            
 </div>
 
 </div>
