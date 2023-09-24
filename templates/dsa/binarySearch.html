@@ -343,8 +343,46 @@ def locate_card(cards, query):
             <span class="python-comment"># Return -1 if position value exceeds the last index</span>
             return -1
 </pre>
-            
-            
+
+<p>Now it is time to test our implementation of the linear search algorithm with the first test_case.</p>
+<pre>
+print(test_cases[0])
+</pre> 
+
+<pre>
+test1 = test_cases[0]
+result = locate_card(test1['input']['cards'], test1['input']['query'])
+print(result)
+</pre>
+
+<pre>
+output = test1['output']
+print(result==output)
+</pre>
+
+<p>The result should be True because the result matches the output.</p>
+
+<p>Our solution worked. Impressive, but it may not be time to celebrate yet. Let us test all our test cases using our solution just to make sure.
+    One way to do it is to test one test case at a time. But what if we had many test cases - may be a thousand. It would not be practical to do it
+    one at a time.
+</p>
+<p>One solution is to use a simple for loop.</p>
+<ol>
+    <li>
+        Create a script and name it main.py 
+    </li>
+    <li>
+        Put all the above code in the script and add the bit below
+    </li>
+</ol>
+<pre>
+for test in test_cases:
+    print(locate_card(**test['input']) == test['output'])
+</pre>
+
+<p>Notice how some of your results are false? You can manually check the false test cases but a better way would be to number your test cases in order to know which ones failed without 
+    having to manually trace the failed test cases.
+</p>
 </div>
 
 </div>
