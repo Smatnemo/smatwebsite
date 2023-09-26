@@ -57,7 +57,196 @@
         will be executed.
     </p>
 
-    
 </div>
+<br>
+<div>
+    <h2>Python Modules</h2>
+    <p>As stated briefly above, python modules are scripts. They end with a .py. Let's create a python script.</p>
+    <p>Create a file named myMath.py. This will be our custom math module.</p>
+<pre class="python-code">
+
+pi = 3.14
+
+def sin(x):
+
+    if 2 * x == pi:
+        return 0.999999
+    else:
+        return None
+</pre>
+<p>Now use python3 command to start python CLI in the current directory where you have created myMath.py.
+    Then run the following command in the CLI.
+</p>
+<pre>
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import myMath
+>>> import math
+>>> print(myMath.sin(myMath.pi/2))
+>>> 0.9999999
+>>> print(math.sin(math.pi/2))
+>>> 1.0
+</pre>
+<p>The myMath is our custom python module while math is a built-in python module. Notice that even if math.py is not in your current directory,
+    it has been imported by python. If a python module is placed in a certain path or the current directory, python will find it.
+</p>
+<p>To ensure that your module is found, you need to do one the following:</p>
+<ul>
+    <li>Place your python module, myMath.py, in the same directory as your python script or the current directory if using CLI</li>
+    <li>Change the PYTHONPATH environment variable to contain the directory where your python module(myMath.py) is located before you start the interpreter.
+        <li>
+            Or: place the module in one of the directories that is found in the PYTHONPATH variable.
+        </li>
+    </li>
+    <li>Place your python module(myMath.py) in one of the installation-dependent directories. Note: you may or may not have write-access to this directory.</li>
+</ul>
+<p>To find all the paths where python searches for modules, do the following:</p>
+<pre>
+Python 3.10.12 (main, Jun 11 2023, 05:26:28) [GCC 11.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import sys
+>>> sys.path
+['', '/usr/lib/python310.zip', '/usr/lib/python3.10', 
+'/usr/lib/python3.10/lib-dynload', '/home/tertese/.local/lib/python3.10/site-packages', 
+'/usr/local/lib/python3.10/dist-packages', '/usr/lib/python3/dist-packages']
+>>> 
+</pre>
+<p>
+    Using this method with the sys module it is possible to append a module, import it and use it.
+    <ul>
+        Follow these steps:
+        <li>create a python module myMath.py in a different location with the same content as above</li>
+        <li>use sys module to append the module</li>
+        <li>import the module and use from the command line</li>
+    </ul>
+</p>
+<pre>
+$ touch /home/user/myMath.py
+</pre>
+<pre>
+>>> import sys
+>>> sys.path.append(r'/home/user/myMath.py') 
+>>> sys.path
+['', '/usr/lib/python310.zip', '/usr/lib/python3.10', '/usr/lib/python3.10/lib-dynload', 
+'/home/tertese/.local/lib/python3.10/site-packages', '/usr/local/lib/python3.10/dist-packages', 
+'/usr/lib/python3/dist-packages', '/home/tertese/Public/examples']
+>>> import myMath 
+>>> 
+</pre>
+<p>Notice two things:
+    <ol>
+        <li>How the path we appended to the list of paths is available when we print sys.path</li>
+        <li>import myMath works even though it is not in the current directory</li>
+    </ol>
+</p>
+<p>To print out the location of a module, use __file__</p>
+<pre>
+>>> myMath.__file__ 
+'/home/tertese/Public/examples/myMath.py'
+>>>
+</pre>
+<p>To see the difference, you could decide to print out the current working directory.</p>
+<pre>
+>>> import os
+>>> os.getcwd()
+'/home/tertese/Public/smat_projects/smatwebsite'
+>>>
+</pre>
+<p>Finally let's find out where the os module is currently installed.</p>
+<pre>
+>>> os.__file__
+'/usr/lib/python3.10/os.py'
+>>> 
+</pre>
+</div>
+
+<br />
+    <div>
+        <h3>Import &lt;module&gt;</h3>
+        <p>
+            The <b>import</b> keyword is used to import a module. The imported module can then be used to qualify the entities in the module.
+            These entities could be:
+            <ol>
+                <li>variables</li>
+                <li>functions</li>
+                <li>or even classes</li>
+            </ol>
+        </p>
+        <pre>import &lt;module&gt;</pre>
+        <p>
+            One important thing to note is that importing a module does not necessarily make the variables and functions available to the caller.
+            The caller must use the &lt;module&gt; to qualify the entity(variable, function or class) in the &lt;module&gt;. In simple terms, Each module has 
+            a <b><i>namespace</i></b>, a <b><i>private symbol table</i></b> which serves as a global symbol table for all objects defined in the module.
+        </p>
+        <p>
+            <b><i>Technical Note:</i></b>Import statement only places the &lt;module&gt; in the symbol table of the caller(the script importing the &lt;module&gt;).
+            The objects or entities defined in the module remain in the &lt;module&gt;'s private symbol table. Hence the objects must be qualified with the &lt;module&gt;'s
+            name followed by a <b>dot notation</b>. An example with our myMath.py module is shown below:
+        </p>
+<p>Run these commands in the python CLI. Or this is assuming you haven't closed the terminal with our previous examples. Otherwise redo steps to follow along.</p>
+<pre>
+>>> myMath.pi
+3.14
+>>>
+>>> myMath.sin(myMath.pi/2)
+>>> 0.999999
+>>>
+</pre>
+
+        <p>From our example, the <b><i>pi</i></b> variable and <b><i>sin</i></b> function are all in the private symbol table of myMath and can only be called as shown in the example above.
+            Any reference to <b><i>pi</i></b> or <b><i>sin</i></b> without usin myMath will raise NameError because they have not been defined. </p>
+
+        <h4>Import Statement Variations</h4>
+        <p>In one import statement, several comma-separated modules may be imported.</p>
+        <pre>import <span id="module">&lt;module1&gt;</span><span id="square-bracket">&#91;</span><span id="module">&lt;module2&gt;</span><span id="comma">&#44;</span><span id="module">&lt;module1&gt;</span><span id="comma">&#44;</span>&#93;</pre>
+
+        <br />
+
+        <h3>from &lt;module&gt; import &lt;name&#40;s&#41;&gt;</h3>
+        <p>This variation allows you to import objects or entities into the local namespace of the caller or the caller's symbol table.</p>
+        <p><b>Warning:</b> Because this method places objects in the caller's symbol table, any name that conflicts will be overwritten.</p>
+        <pre>>>> from myMath import pi
+>>> pi 
+>>> 3.14
+        </pre>
+
+        <p>It is possible to import all the entities or objects in a module using: <pre>from &lt;module&gt; impot *</pre></p>
+        <pre>>>> from myMath import *
+>>> pi 
+>>> 3.14
+        </pre>
+        
+        <p><b>Warning:</b> As you have guessed it is not advisable to do this. You would be impoting names <i>en masse</i> into the caller's symbol table. 
+        This could lead to overwriting your local variables.
+        </p>
+
+        <h3>from &lt;module&gt; import &lt;name&gt; as &lt;alternative_name&gt;</h3>
+        <p>This is the same as the variation above with the exception that the imported entities or objects will be known by different names in the local symbol table. 
+        </p>
+        <p>It is possible to import multiple objects the same way.</p>
+        <pre>>>> from &lt;module&gt; import &lt;name&gt; as &lt;alternative_name&gt; <span id="square-bracket">&#91;</span>&lt;name&gt; as &lt;alternative_name&gt;<span id="square-bracket">&#93;</span></pre>
+        <p>Considering our example above with myMath.py module, let's import pi as pie and sin as sine</p>
+        <pre>>>> from myMath import pi as pie, sin as sine 
+>>> pie 
+>>> 3.14
+>>> sine(pie/2)
+>>> 0.999999 
+>>>
+        </pre>
+
+        <h4>import &lt;module&gt; as &lt;alt_name&gt;</h4>
+        <p>It is possible to import entire module with an alternative name</p>
+        <pre>>>> import myMath as math</pre>
+
+        <p>The advantage of this syntax is to help you avoid conflicts in the local caller's symbol table.</p>
+        <p>It is possible to import from within a function so that the module is only imported when the function is called.</p>
+        <pre class="python-code">
+def myfunc():
+
+    from myMath import pi 
+    return pi
+        </pre>
+        <p>However, </p>
+    </div>
 </div>
 {% include 'dsa/footer.html' %}
