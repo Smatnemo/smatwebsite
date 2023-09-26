@@ -27,4 +27,5 @@ def sep(request, day_id):
 def dsa(request, topic='dsaindex'):
     return render(request, 'dsa/'+ topic + '.html')
 
-    
+def articles(request, topic):
+    return render(request, 'articles/'+ topic + '.html')
