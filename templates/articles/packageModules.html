@@ -1,0 +1,63 @@
+{% include 'dsa/header.html' %}
+<div class="wrapper">
+<div>
+    <h2>What is __init__.py?</h2>
+    <p>In Python, the __init__.py file is used to mark a directory as a python package. It is used to initialize the package when a package is imported.
+    </p>
+    <p>It works like the constructor of a class. It can contain code that will run once a python package is imported. Things that can be contained in this 
+        file are:
+        <ol>
+            <li>variable assignments</li>
+            <li>function definitions</li>
+            <li>constants</li>
+        </ol>
+        It is typically the entry point of a package.
+    </p>
+    <br />
+    <h3>Package vs Module</h3>
+    <p>Here is an example of a python package. Package is a collection of modules while a module is a python script.</p>
+    <pre>
+    package_name/
+        __init__.py
+        module1.py
+        module2.py
+        ...
+    </pre>
+
+    <p>You can import a module using the name of a package like in the example below.</p>
+
+    <pre>
+    import package_name.module1.py
+    </pre>
+    <p>When you use the import statement as it is used above, python executes package_name.__init__.py before importing the module named module1.
+        This can be useful if you want to do some initialization before importing the module. A package is not just a collection of modules. It can be a 
+        collection of other packages as well. And each subpackage can have its own __init__.py file.
+    </p>
+
+    <pre>
+        package_name/
+            __init__.py 
+            subpackage1/ 
+                __init__.py
+                module1.py
+                module2.py
+                ...
+            subpackage2/
+                __init__.py
+                module1.py 
+                module2.py 
+                ...
+        </pre>
+    <p>With a structure such as this, you will import a package from subpackage1 using the following syntax:</p>
+    <pre>
+        import package_name.subpackage1.module1
+    </pre>
+
+    <p>And as you have guessed, the package_name.__init__.py and package_name.subpackage1.__init__.py would be executed before module1
+        will be executed.
+    </p>
+
+    
+</div>
+</div>
+{% include 'dsa/footer.html' %}
