@@ -383,6 +383,17 @@ for test in test_cases:
 <p>Notice how some of your results are false? You can manually check the false test cases but a better way would be to number your test cases in order to know which ones failed without 
     having to manually trace the failed test cases.
 </p>
+
+<pre>
+i = 0
+for test in test_cases:
+    print('test', i, ': ', locate_card(**test['input'])==test['output'])
+    i += 1
+</pre>
+
+<p> Now we can tell the test case that has failed by its index. Exciting isn't it?</p>
+
+
 </div>
 
 </div>
