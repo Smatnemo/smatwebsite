@@ -1,0 +1,69 @@
+{% include 'dsa/header.html' %}
+
+<div class="wrapper">
+    <div>
+        <h1>Python Packages</h1>
+        <p>
+            Python packages are directories with the __init__.py file in their root directory.
+            When you import a package, the __init__.py file runs first to initialize your package.
+            In the package __init__.py file you can import modules or entities in the modules relatively.
+            That way all the classes, functions and other entities in the modules you have within your package.
+            Let's do all of these things in an example.
+
+        </p>
+
+        <h2>Example of Package imports</h2>
+        <p>
+            <ol>
+                Let's create a package with the following structure:
+                <li>Create a directory called package in your current working directory</li>
+                <li>Change directory into your new directory</li>
+                <li>Create a file named __init__.py</li>
+                <li>Create two files named module1.py and module2.py</li>
+            </ol>
+        </p>
+        <p>If you have done this as described above, you should have a package with such a structue:</p>
+        <pre>package/
+    __init__.py
+    module1.py
+    module2.py
+</pre>
+        <p>In linux it, you can create it using the following:</p>
+
+        <pre>
+tertese@systemname$~mkdir package
+tertese@systemname$~cd package
+tertese@systemname$~/package/ $touch __init__.py
+tertese@systemname$~/package/ $touch module1.py
+tertese@systemname$~/package/ $touch module2.py
+tertese@systemname$~/package/ $cd ..
+tertese@systemname$~/
+</pre>
+        <p>
+            If you have followed the instructions above, then your current directory should have the package directory listed. Use ls command to find out.
+            Now create a python script or type python3 in your terminal and do the following test:
+        </p>
+        <pre>
+tertese@systemname~$ python3
+>>> import package
+>>> import package.module1
+</pre>
+        <p>If you have reached this far well done. However, we cannot do anything else. Not fun is it?
+        Now use Ctrl + D to exit the python CLI. 
+        </p>
+        <p>Now let us add some useful python code in our package. Our package will be a math package.
+        Use any code editor of your choice to edit module1.py. </p>
+
+        <br />
+        <h3>import &lt;package_name&gt;</h3>
+        <p>
+            This syntax can be used to import a package
+        </p>
+        <pre>import &lt;package_name&gt;</pre>
+    </div>
+    <div>
+
+    </div>
+</div>
+
+{% include 'dsa/footer.html' %}
