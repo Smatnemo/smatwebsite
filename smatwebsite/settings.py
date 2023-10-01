@@ -135,3 +135,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 30
 }
+
+# Keys for stripe api
+STRIPE_PUBLISHABLE_KEY='pk_test_51Nv38iH3h7KK43tTyG30p6nYGLaSV8McdkCVUfgzhEGseOBvLyeewhZmytXgF6NsLOUm9BZSvtTXeUqI5e6ON4lJ00lNbfkuoI'
+STRIPE_SECRET_KEY='sk_test_51Nv38iH3h7KK43tTiClEqYXA2AHy4XU28cWpqxNJcbyTeHcvKrylQUAWVSRVRb0prrxcVYwcimfK6ZVZu2DjfnNL00xTbDqAkm'
