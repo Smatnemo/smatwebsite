@@ -28,7 +28,7 @@ def stripe_config(request):
 @csrf_exempt
 def create_checkout_session(request):
     if request.method == 'GET':
-        domain_url = settings.ALLOWED_HOSTS[2] + '/'
+        domain_url = 'https://www.smatwebsite.co.uk/'
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
             # Create new Checkout Session for the order
