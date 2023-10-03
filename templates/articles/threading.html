@@ -1,0 +1,51 @@
+{% include 'dsa/header.html' %}
+
+<div>
+    <h2>Threading</h2>
+    <h3>What is a thread?</h3>
+    <p>In python the standard library provides a module called threading which provides the entities that will be used in this article. 
+        Please note that this is not a beginner tutorial and assumes prior knowledge of python.
+    </p>
+    <p>A thread could be either a daemon thread or a non-daemon thread. The difference is that a non-daemon thread is completed before a function is exited while a daemon process is killed once the process is completed.
+        A daemon in this sense is not the same as a daemon process in computer science which is a process which runs in the background.
+    </p>
+    <pre>
+        import threading 
+        import time
+    </pre>
+    <pre>
+        def function():
+            while True:
+                print("Function 1")
+                time.sleep(1)
+        def function2():
+            while True:
+                print("Function 2")
+                time.sleep(1)
+    </pre>
+
+    <pre>
+        thread1 = threading.Thread(target=function1)
+        thread2 = threading.Thread(target=function2)
+    </pre>
+
+    <pre>
+        #Start the threads
+        thread1.start()
+        thread2.start()
+    </pre>
+
+    <pre>
+        while True:
+            pass
+    </pre>
+
+    <p>It is possible to check if a thread is alive before starting it. This can be done using the is_alive() method.</p>
+    <pre>
+        thread.is_alive()
+    </pre>
+    <p>
+        This returns true if the thread is still running
+    </p>
+</div>
+{% include 'dsa/footer.html' %}
