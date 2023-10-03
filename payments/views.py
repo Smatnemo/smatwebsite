@@ -11,15 +11,24 @@ import stripe
 class HomePayView(TemplateView):
     template_name = 'payHome.html'
 
+# View to notify success
+class SuccessView(TemplateView):
+    template_name = 'success.html'
+
+# View to notify cancellation
+class CancelledView(TemplateView):
+    template_name = 'cancelled.html'
+
 @csrf_exempt
 def stripe_config(request):
     if request.method == 'GET':
         stripe_config = {'publicKey': settings.STRIPE_PUBLISHABLE_KEY}
         return JsonResponse(stripe_config, safe=False)
 
+@csrf_exempt
 def create_checkout_session(request):
     if request.method == 'GET':
-        domain_url = 'http://localhost:8000'
+        domain_url = 'http://127.0.0.1:8000/'
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
             # Create new Checkout Session for the order
@@ -36,14 +45,14 @@ def create_checkout_session(request):
                 cancel_url=domain_url + 'cancelled/',
                 payment_method_types=['card'],
                 mode='payment',
-                line_items=[
-                    {
-                        'name': 'coffee',
+                line_items=[{
+                        'price_data':{
+                            'unit_amount':1000,
+                            'product_data':{'name': 'coffee'},
+                            'currency': 'gbp',
+                                      },
                         'quantity': 1,
-                        'currency': 'pounds',
-                        'amount': '10',
-                    }
-                ]
+                    }]
             )
             return JsonResponse({'sessionId': checkout_session['id']})
         except Exception as e:
