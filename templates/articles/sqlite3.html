@@ -1,0 +1,47 @@
+{% include 'dsa/header.html' %}
+
+<div>
+    <h1>SQLite3</h1>
+    <p>SQLite3 is a package in python used to interact with an sqlite database. Sqlite database is a relational database that is extremely light. It is a single file present on the computer and ends with the .db extension.
+        It is a serverless database. The file also contains a standard way to communicate with it using SQL that is embedded within it. Any programming language that supports sqlite can interact with the database.
+    </p>
+    <p>Relational databases are structured databases that store files in tables and establish relationships between the tables. A popular way to interact with this data is through Structured Query Language(SQL). <b>SQL</b>
+    is a declarative language used to create, query and manage the data contained in this database. A declarative language states what is to be accomplished rather than how it is should be accomplished.
+    </p>
+</div>
+
+<div>
+    <h2>Structuring a Database with SQL</h2>
+    <p>Let's get right into it. The basic concept is to structure a table in a database into rows and columns. Each row is a record. Each column or field is a property of the record.
+        The basic structure or placeholder consists of an empty table with several columns that describe the features of the records that will populate the table. An example would be a person.
+        A person or user is a record that has unique properties such as name, address, age, height, weight and etc. Each property of a user such as name, height, etc is a column. 
+    </p>
+    <p>
+        Each column has a title which defines the unique data that will be stored in it. Eg name. All our records(people) that will be stored in the table will have names. They will have addresses and so on.
+        Each title(column or field) will have a type. The name is of type string(varchar in the case of sql), age will be of type int.
+    </p>
+    <p>
+        Among the columns or properties of each record, there is usually a unique identifier. It is called a primary key. This is similar to a key in a <b>python dictionary</b>. The primary key can be specified when creating a table. 
+        One column or field is usually chosen to be the primary field. It is usually the column with data that is unique across all records. Email addresses for example could be used as unique identifiers in our example.
+    </p>
+<pre>
+CREATE TABLE user (
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    email_address VARCHAR(255) NOT NULL,
+    address VARCHAR(255),
+    phone_number INT,
+    birthday DATETIME
+)
+</pre>
+<p>
+    The above command creates a table(a placeholder) for our data. It is used to create a table where records can be added one row at a time.
+    The fields are defined above. 
+</p>
+</div>
+
+<div>
+    <h2>One-to-Many Relationships</h2>
+    <p>A <b>one-to-many</b> relationship is used when one record in a table can be associated with many records in another table. To continue</p>
+</div>
+{% include 'dsa/footer.html' %}
