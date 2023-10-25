@@ -9,15 +9,15 @@ from django.conf import settings
 import stripe
 # Create your views here.
 class HomePayView(TemplateView):
-    template_name = 'payHome.html'
+    template_name = 'payments/payHome.html'
 
 # View to notify success
 class SuccessView(TemplateView):
-    template_name = 'success.html'
+    template_name = 'payments/success.html'
 
 # View to notify cancellation
 class CancelledView(TemplateView):
-    template_name = 'cancelled.html'
+    template_name = 'payments/cancelled.html'
 
 @csrf_exempt
 def stripe_config(request):
