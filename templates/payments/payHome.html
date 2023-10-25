@@ -9,23 +9,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Django + Stripe Checkout</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
     <script src="https://js.stripe.com/v3/"></script>
     <script src="{% static 'assets/js/payment.js' %}"></script>
     <script defer src="https://use.fontawesome.com/releases/v6.4.0/js/all.js"></script>
+
+    <style>
+      .box {
+        display: flex;
+      }
+    </style>
   </head>
   <body>
   <section class="section">
     <h2>Looking for ways to support me?</h2>
     <p>Look no further. You could make a difference by supporting one of my many projects. One way to support is also by doing so in kind. 
       You could advise on a better way of doing things and how to improve.</p>
-    <div class="container">
-      <button class="button is-primary" id="submitBtn">Purchase A Cup of Coffee!</button>
-    </div>
-    <div>
-      <button class="button is-primary" id="submitBtn2">Purchase a Bottle of Beer</button>
-    </div>
-    <div>
-      <button class="button is-primary" id="submitBtn3">Purchase a Crate of Beer</button>
+    <div class="box">
+      <div class="container">
+        <button class="button is-primary" id="submitBtn">Purchase A Cup of Coffee!</button>
+      </div>
+      <div>
+        <button class="button is-primary" id="submitBtn2">Purchase a Bottle of Beer</button>
+      </div>
+      <div>
+        <button class="button is-primary" id="submitBtn3">Purchase a Crate of Beer</button>
+      </div>
     </div>
   </section>
 
