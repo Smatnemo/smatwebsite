@@ -1,0 +1,45 @@
+{% include 'articles/header.html' %}
+<div class="wrapper">
+    <div>
+        <h1>Python Generators</h1>
+    </div>
+    <div>
+        <p>Using python generators can really be helpful when you work with a large dataset. This is because computer memory(RAM) is limited.
+            It is very common to have very large datasets these days.
+            Apart from working with large datasets, maybe you have a complex function that is too small to be modified into a class of its own but the 
+            function needs to keep track of its own state. This is where python generators and yeild statement help.
+        </p>
+        <ul>
+            <li>
+                <b>what are python generators?</b>
+            </li>
+            <li>
+                <b>How do we create python functions and expressions?</b>
+            </li>
+            <li>
+                <b>How does the python yeild statement work?</b>
+            </li>
+            <li>
+                <b>How do we use multiple yeild statements in a generator function?</b>
+            </li>
+            <li>
+                <b>How do we use advanced generator methods?</b>
+            </li>
+            <li>
+                <b>How do we build data pipelines with multiple generators?</b>
+            </li>      
+        </ul>
+    </div>
+    <div>
+        <h1>Python Generators</h1>
+        <p>Generator functions are special kind of functions that return lazy iterators. Unlike lists, lazy iterators do not store their contents in memory.
+            Assuming you are familiar with what <a href="{% url 'articles' 'pythoniterators' %}">iterators</a> are, let us proceed. Let us proceed to find out what they are like in action. Let's get to it.
+        </p>
+        <h3>Example 1: Reading Large Files</h3>
+        <p>
+            Working with large data streams or large files is a common use case. In our case, we will use a <a href="{% url 'articles' 'csvfiles' %}">csv(comma-separated-values)</a> file. A csv file separates data 
+            into columns using commas. Let's assume we have a function that returns a lazy iterator called csv_reader.
+        </p>
+    </div>
+</div>
+{% include 'articles/footer.html' %}
