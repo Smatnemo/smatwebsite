@@ -38,7 +38,36 @@
         <h3>Example 1: Reading Large Files</h3>
         <p>
             Working with large data streams or large files is a common use case. In our case, we will use a <a href="{% url 'articles' 'csvfiles' %}">csv(comma-separated-values)</a> file. A csv file separates data 
-            into columns using commas. Let's assume we have a function that returns a lazy iterator called csv_reader.
+            into columns using commas. Let's assume we have a function csv_reader that returns an iterator that we then pass to csv_gen.
+        </p>
+        <pre>
+            csv_list = csv_reader("csv_file.txt")
+
+            row_count = 0
+
+            for row in csv_list:
+                row_count += 1
+
+            print(f"Row count is {row_count}")
+        </pre>
+        <p>
+            Remember to create a csv_file.txt file in the current working directory. Add 3 or more words to each line and separate the words by commas.
+            Each word represents a column. Do the same for as many lines or rows as you pleas.
+            The function is defined below.
+        </p>
+        <pre>
+            def csv_reader(filename):
+                
+                file = open(filename)
+                result = file.read().split("\n")
+                return result
+        </pre>
+        <p>
+            The function opens a file "csv_file.txt" and uses read() function to read a file into a string. The split() function divides the string into items and adds them to a list.
+            In my case, my csv file has five lines of text. The code snippet returned 5.
+        </p>
+        <p>
+            Now download the following csv file and test it using the code above. 
         </p>
     </div>
 </div>
